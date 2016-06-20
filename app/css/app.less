@@ -1,0 +1,256 @@
+@import '../../dw3/_dw3';
+
+/* WIDTHS */
+@containerWidth: 1024px;
+@containerWidthTablet : 720px;
+@gutterWidth: 10px;
+/* COLORS */
+@black:   #222;
+@white:   #f5f5f5;
+@gray:    #888;
+@main:    #4CB19F;
+@main_l: @main*1.2;
+@main_d: @main/1.2;
+@sec:     #1B9AF7;
+
+.font{font-family: Roboto, sans-serif;}
+
+/* -----------  */
+
+.gradient1{
+  .background-image(linear-gradient(to right ,@main, @main_l));
+}
+
+.gradient2{
+  .background-image(linear-gradient(to right ,@sec, @sec/1.2));
+}
+
+.mt{margin-top: @gutterWidth*2.5;}
+.mb{margin-bottom: @gutterWidth*2.5;}
+.mt2{margin-top: @gutterWidth*5;}
+.mb2{margin-bottom: @gutterWidth*5;}
+/* ----------- */
+
+body{
+  .font;
+}
+
+
+h2, h3{
+  .font;
+  font-weight: bold;
+  color:@main_d;
+  font-size: 2em;
+  text-transform: uppercase;
+  .mb;
+  &:after{
+    display: block;
+    content:"";
+    width: 50px;
+    height: 2px;
+    background: @main;
+    .gradient1;
+  }
+}
+
+h3{
+  font-size: 1.4em;
+  color:@gray;
+  &:after{ display: none; }
+}
+h4{
+  font-size: 1.2em;
+  color:@main;
+  margin-bottom: 20px;
+}
+
+p{
+  font-size: 0.9em;
+  color: @gray;
+  margin: @gutterWidth 0;
+  &.light{ color:@main; }
+}
+ul, ol{
+  color: @gray;
+  margin-left: @gutterWidth*2;
+  li{
+    margin: 2px;
+  }
+}
+
+
+/* ### TOOLTIPSTER */
+.tooltipster-default{
+  .border-radius(0);
+  border:none;
+  background: @main;
+  .gradient1;
+}
+
+
+
+header{
+  height: 534px;
+  .logo{display: block; text-align: center;}
+  .menu{
+    margin-top: 40px;
+    text-align: center;
+    nav{
+      ul{
+        margin: 0;
+        list-style: none;
+        margin-top: 40px;
+      }
+      a{
+        margin-top: 5px;
+        display: block;
+        color:@main;
+        text-transform: uppercase;
+        padding: 10px 5px;
+        font-size: 0.9em;
+        font-weight: lighter;
+        .transition(0.2s);
+        &:after{
+          display: block;
+          content:"";
+          width: 26px;
+          height: 2px;
+          background: @main;
+          margin: 0 auto;
+          .gradient1;
+          .transition(0.2s);
+        }
+        &:hover{
+          .transition(0.2s);
+          color:@main_l;
+          &:after{
+            .transition(0.2s);
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.banner, #consejos{
+  .gradient1;
+  padding: 40px 60px;
+  color:@white;
+  font-weight: lighter;
+  font-size: 1.4em;
+  text-align: center;
+  @media @mobile{ font-size: 1.1em; padding: 30px;}
+}
+
+
+
+
+#nosotros{
+  text-align: justify;
+}
+
+.serviciosList{
+  margin-top: 80px;
+  div.slick-slide{
+    display: block;
+    .gradient1;
+    color:@white;
+    padding: 10px;
+    font-size: 0.9em;
+    cursor:pointer;
+  }
+  div.slick-current{
+    margin-left: 20px;
+    outline: none !important;
+  }
+}
+.serviciosInfo{
+  text-align: justify;
+  ul{
+    font-size: 0.8em;
+    li{
+    }
+  }
+  strong{
+    color:@main_d;
+  }
+  .invitamos{
+    text-align: center;
+    padding: 10px 20px;
+  }
+}
+
+.slick-arrow{
+  &:before{
+    font-family: FontAwesome;
+    color:@main_d;
+  }
+  &.slick-prev:before{ font-family: FontAwesome; content:"\f053"; }
+  &.slick-next:before{ font-family: FontAwesome; content:"\f054"; }
+}
+
+#consejos{
+  .gradient2;
+  padding: 200px 0;
+  font-size: 1.1em;
+  h2{
+    color:@sec/1.6;
+    &:after{display: none; }
+  }
+  .slick-arrow:before{
+    color:@sec*1.4;
+  }
+}
+
+#test{
+  form{
+    label.simple{
+      display: block;
+      color:@gray;
+      font-size: 0.9em;
+      padding: 2px 0;
+      margin-bottom: 5px;
+      border-bottom: 1px solid @main;
+    }
+  }
+  .end{text-align: right;}
+}
+
+
+
+.rzslider .rz-pointer{
+  background: @main;
+  &.rz-active{
+    background: @sec;
+  }
+}
+.rzslider .rz-pointer.rz-active:after{
+  background-color:@white;;
+}
+
+.inputradio{
+  input[type="radio"]{
+    visibility: hidden;
+    position: absolute;
+  }
+  input[type="radio"]:checked +label{
+    background: @sec;
+    color:@white;
+  }
+}
+.question{
+  padding: 40px 10px 80px 10px;
+  border-bottom: 1px solid @gray;
+  text-align: center;
+  background: @white;
+  .box-shadow(0 0 10px @white/1.2);
+}
+
+
+.steps-indicator li.done a:before{
+  background-color:@main;
+}
+.steps-indicator li.editing a:before{
+  background: @sec;
+}

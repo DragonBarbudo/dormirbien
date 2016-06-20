@@ -1,0 +1,35 @@
+- //DRAGON WEBELOPER 3
+- //| _config.jade | v 0.1 |
+include ../dw3/_dw3.jade
+
+- var app_title = "DW3"
+
+- css('https://dbo.space/dw3/css/14')
+- css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css')
+- css('http://fonts.googleapis.com/css?family=Lato:300,400,700')
+- css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css')
+- css('https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/4.0.2/rzslider.min.css')
+- css('https://cdnjs.cloudflare.com/ajax/libs/angular-wizard/0.6.1/angular-wizard.min.css')
+- css('app/css/app.css')
+
+
+- js('https://dbo.space/dw3/js/15')
+- js('https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/4.0.2/rzslider.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/angular-wizard/0.6.1/angular-wizard.min.js')
+- js('app/js/app.js')
+
+- menu('Nosotros', '#nosotros', null, {'du-smooth-scroll':true})
+- menu('Servicios', '#servicios', null, {'du-smooth-scroll':true})
+- menu('Consejos', '#consejos', null, {'du-smooth-scroll':true})
+- menu('Test del sueño', '#test', null, {'du-smooth-scroll':true})
+- menu('Dormir bien', '#dormir-bien', null, {'du-smooth-scroll':true})
+- menu('Contacto', '#contacto', null, {'du-smooth-scroll':true})
+
+
+
+
+mixin radiobtn(label, model, name)
+  - var rnm = Math.floor((Math.random() * 1000) + 1)
+  .inputradio
+    input(type="radio", id="name_#{rnm}", name="#{model}", ng-model="#{model}", value="#{label}")
+    label(for="name_#{rnm}").button.button-pill.button-small #{label}
