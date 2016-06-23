@@ -5,11 +5,16 @@ var app = angular.module('dw3', [
   'duScroll',
   'slickCarousel',
   'rzModule',
-  'mgo-angular-wizard'
+  'mgo-angular-wizard',
+  'uiGmapgoogle-maps'
 ]);
 
-app.config(function(){
-
+app.config(function(uiGmapGoogleMapApiProvider){
+  uiGmapGoogleMapApiProvider.configure({
+      key: 'AIzaSyBsjQCGDPC5cnf-GqNpov0r6lSeNAjQ8Hk',
+      v: '3', //defaults to latest 3.X anyhow
+      libraries: ''
+  });
 });
 
 
@@ -22,6 +27,14 @@ app.controller('MainCtrl', function($scope){
 
 
 });
+
+
+app.controller('FormCtrl', function($scope){
+  $scope.form = {};
+  $scope.quickForm = function(){
+
+  }
+})
 
 
 app.controller('TestCtrl', function($scope){

@@ -1,0 +1,58 @@
+.c12
+  h2 Test del sueño
+  br
+  h3 ¿Padezco algún transtorno respiratorio del sueño?
+  
+  form   
+    wizard(on-finish="finishTest()")   
+      wz-step(wz-title="IMC")
+        .container
+          .c.g
+            label.simple Peso (kg)
+            rzslider(rz-slider-model="test.peso", rz-slider-options="test.options")
+          .c.g
+            label.simple Altura (cm)
+            rzslider(rz-slider-model="test.altura", rz-slider-options="test.options")
+          .c.g
+            label.simple Índice de Masa Corporal
+            rzslider(rz-slider-model="test.imc", rz-slider-options="test.optionsb" )
+        .container.end.mt2
+          .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
+      wz-step(wz-title="Ronquido")
+        .container
+          .c4.question
+            h4 ¿Cuando duerme?
+            .container
+              .c: +radiobtn('Sí', 'test.ronca')
+              .c: +radiobtn('No', 'test.ronca')
+              .c: +radiobtn('No sabe', 'test.ronca')
+          .c4.question
+            h4 Su ronquido es:
+            .container
+              .c: +radiobtn('Sí', 'test.ronquidoes')
+              .c: +radiobtn('No', 'test.ronquidoes')
+              .c: +radiobtn('No sabe', 'test.ronquidoes')
+          .c4.question
+            h4 ¿Con qué frecuencia ronca?
+            .container
+              .c: +radiobtn('Sí', 'test.frecuencia')
+              .c: +radiobtn('No', 'test.frecuencia')
+              .c: +radiobtn('No sabe', 'test.frecuencia')
+        .container.end.mt2
+          .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
+      wz-step(wz-title="Su ronquido")
+        .container
+          .c4.o1.question
+            h4 ¿Su ronquido molesta a otras personas?
+            .container
+              .c: +radiobtn('Sí', 'test.molesta')
+              .c: +radiobtn('No', 'test.molesta')
+              .c: +radiobtn('No sabe', 'test.molesta')
+          .c4.o1.question
+            h4 ¿Alguien ha notado que deja de respirar mientras duerme?
+            .container
+              .c: +radiobtn('Sí', 'test.norespira')
+              .c: +radiobtn('No', 'test.norespira')
+              .c: +radiobtn('No sabe', 'test.norespira')
+        .container.end.mt2
+          .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill

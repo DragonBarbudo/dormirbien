@@ -29,6 +29,7 @@
 .mb{margin-bottom: @gutterWidth*2.5;}
 .mt2{margin-top: @gutterWidth*5;}
 .mb2{margin-bottom: @gutterWidth*5;}
+.tar{text-align: right;}
 /* ----------- */
 
 body{
@@ -254,3 +255,23 @@ header{
 .steps-indicator li.editing a:before{
   background: @sec;
 }
+
+
+
+.markerLabel{
+  background: @main;
+  color:@white;
+  .border-radius(4px);
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+#contacto{
+  h3{ color:@main; margin-bottom: 10px; }
+  h4{ color:@gray; margin-bottom: 5px; }
+}
+
+
+.angular-google-map-container { height: 600px;
+@media @mobile{height:200px; min-height: 200px;}}
