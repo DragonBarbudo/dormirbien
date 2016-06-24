@@ -1,4 +1,4 @@
-.c12
+.c12.cm10.om1
   h2 Test del sueño
   br
   h3 ¿Padezco algún transtorno respiratorio del sueño?
@@ -7,32 +7,32 @@
     wizard(on-finish="finishTest()")   
       wz-step(wz-title="IMC")
         .container
-          .c.g
+          .c.cm12.g
             label.simple Peso (kg)
             rzslider(rz-slider-model="test.peso", rz-slider-options="test.options")
-          .c.g
+          .c.cm12.g
             label.simple Altura (cm)
             rzslider(rz-slider-model="test.altura", rz-slider-options="test.options")
-          .c.g
+          .c.cm12.g
             label.simple Índice de Masa Corporal
             rzslider(rz-slider-model="test.imc", rz-slider-options="test.optionsb" )
         .container.end.mt2
-          .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
+          .c.cm10: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
       wz-step(wz-title="Ronquido")
         .container
-          .c4.question
+          .c4.cm12.question
             h4 ¿Cuando duerme?
             .container
               .c: +radiobtn('Sí', 'test.ronca')
               .c: +radiobtn('No', 'test.ronca')
               .c: +radiobtn('No sabe', 'test.ronca')
-          .c4.question
+          .c4.cm12.question
             h4 Su ronquido es:
             .container
               .c: +radiobtn('Sí', 'test.ronquidoes')
               .c: +radiobtn('No', 'test.ronquidoes')
               .c: +radiobtn('No sabe', 'test.ronquidoes')
-          .c4.question
+          .c4.cm12.question
             h4 ¿Con qué frecuencia ronca?
             .container
               .c: +radiobtn('Sí', 'test.frecuencia')

@@ -14,9 +14,23 @@ include app/_config.jade
     
     section#nosotros.container
       include _nosotros
+    
+    section#bannerA.bannerFix.container.fluid
+      .c: h2 Debido a la naturaleza multidisciplinaria de la patología, se requiere de la cooperación y realización entre las diversas especialidades médicas.
+    
     section#servicios.container.mt2
       include _servicios
+    
+    section#bannerB.bannerFix.container.fluid
+      .c: h2 Venta de equipos CPAP
 
+    section#productos.mb
+      include _productos
+                    
+                    
+    section#transtornos.mt2.mb.container
+      include _transtornos
+    
     section#consejos.container.fluid.mt
       include _consejos
     
@@ -24,30 +38,36 @@ include app/_config.jade
       include _test
   
     section#contacto.container.mt2.mb
-      .c12
+      .c12.cm10.om1
         h2 Contacto
         br
       .c6.cm12.g
         ui-gmap-google-map(center="{latitude:21.144671, longitude:-86.822484}" zoom="17")
           ui-gmap-marker(coords="{latitude:21.144671, longitude:-86.822484}", idkey="1", options="{labelContent:'Hospital Amerimed Cancún', labelClass:'markerLabel', labelAnchor:'100 100' }")
-      .c6.cm12.g
+      .c6.cm10.om1.g
         h3 Hospital Amerimed Cancún
         h4 Consultorio 207
         p Av.  Tulum Sur 260 MZ 4,5,9 SM 7, CP 77500, Cancún Q.R.
         h3 Contáctanos
-        form(ng-submit="quickForm", ng-controller="FormCtrl").container.fluid
+        p Llene el formulario siguiente y nos pondremos en contacto lo antes posible.
+        form(ng-submit="quickForm", ng-controller="FormCtrl").contactus.container.fluid
           .c12.g: label
             input(type="text", placeholder="Nombre", ng-model="form.nombre")
-          .c6.g: label
+          .c12.g: label
             input(type="email", placeholder="Correo electrónico", ng-model="form.correo")
-          .c6.g: label
+          .c12.g: label
             input(type="text", placeholder="Teléfono", ng-model="form.telefono")
           .c12.g: label
             textarea(placeholder="Su mensaje", ng-model="form.mensaje")
-          .c12.g
-            .submit-wrapper.tar: button(type="submit").button.button-pill.button-primary
+          .c12.g.tac
+            button(type="submit").button.button-pill.button-primary
               i.fa.fa-envelope
               span  Enviar mensaje
-      
+    footer
+      .container
+        .c3.ct12.cm12.tac
+          a(href="#inicio", title="Dormir Bien. Clínica del Sueño en Cancún").tooltip.logo: img(src="app/img/dormirbien_blanco.svg", alt="Dormir Bien")
+        .c8.ct12.cm12
+          +menu
   
     +scripts
