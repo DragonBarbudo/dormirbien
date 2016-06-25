@@ -295,41 +295,7 @@ header{
   }
 }
 
-footer{
-  background: @sec;
-  .logo{
-    display: block;
-    padding: 12px 0;
-    img{
-      height: 60px;
-    }
-  }
-  nav{
-    ul{
-      margin-top: 24px;
-      .container;
-      .fluid;
-      li{
-        display: block;
-        .c;
-        @media @mobile{
-          .c12;
-        }
-        a{
-          display: block;
-          color:@white;
-          padding: 10px;
-          font-size: 0.8em;
-          text-align: center;
-          &:hover{
-            background: @white;
-            color:@main;
-          }
-        }
-      }
-    }
-  }
-}
+
 
 #productos{
   .gradient1;
@@ -474,5 +440,52 @@ footer{
     &:before{
       color:@white; text-align: center;
     }
+  }
+}
+
+
+footer{
+  background: @sec;
+  bottom: -100px;
+  .transition(all 1s);
+  .logo{
+    display: block;
+    padding: 12px 0;
+    img{
+      height: 60px;
+    }
+  }
+  nav{
+    ul{
+      margin-top: 24px;
+      .container;
+      .fluid;
+      li{
+        display: block;
+        .c;
+        @media @mobile{
+          .c12;
+        }
+        a{
+          display: block;
+          color:@white;
+          padding: 10px;
+          font-size: 0.8em;
+          text-align: center;
+          &:hover{
+            background: @white;
+            color:@main;
+          }
+        }
+      }
+    }
+  }
+  &.stick{
+    .container{.fluid;}
+    .transition(all 1s);
+    position: fixed;
+    left: 0;bottom: 0; width: 100%;
+    z-index: 99;
+    .box-shadow(0 -10px 0px fade(@sec, 50%));
   }
 }

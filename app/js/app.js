@@ -90,3 +90,31 @@ app.controller('TestCtrl', function($scope){
 
 
 angular.module("ngSwipebox").run(["$templateCache", function($templateCache) {$templateCache.put("swipebox.html","<div ng-repeat=\'photo in photos\'>\n        <a ng-href=\'{{ photo.href }}\' class=\'swipebox\' title=\'{{ photo.title }}\'>\n            <img ng-src=\'{{ photo.src }}\' alt=\'image\'>\n        </a>\n    </div>\n");}]);
+
+
+
+
+
+
+$(function(){
+  var waypointMenu = new Waypoint({
+    element: $('#nosotros'),
+    handler: function(direction) {
+      if(direction=='down'){
+        $('footer').addClass('stick');
+      } else if(direction=='up'){
+        $('footer').removeClass('stick');
+      }
+    }
+  });
+  var waypointFooter = new Waypoint({
+    element: $('#contacto'),
+    handler: function(direction) {
+      if(direction=='down'){
+        $('footer').removeClass('stick');
+      } else if(direction=='up'){
+        $('footer').addClass('stick');
+      }
+    }
+  });
+});
