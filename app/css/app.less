@@ -454,17 +454,25 @@ footer{
     img{
       height: 60px;
     }
+    .nom;
   }
   nav{
     ul{
       margin-top: 24px;
       .container;
       .fluid;
+      @media @tablet{
+        margin-top: 0;
+      }
+      @media @mobile{
+        margin-top: 5px;
+      }
       li{
         display: block;
         .c;
         @media @mobile{
-          .c12;
+          .c4;
+          .g;
         }
         a{
           display: block;
@@ -472,6 +480,9 @@ footer{
           padding: 10px;
           font-size: 0.8em;
           text-align: center;
+          @media @mobile{
+            padding: 2px;
+          }
           &:hover{
             background: @white;
             color:@main;
