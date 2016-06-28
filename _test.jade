@@ -1,9 +1,12 @@
 .c12.cm10.om1
-  h2 Test del sueño
-  br
+
   h3 ¿Padezco algún transtorno respiratorio del sueño?
   
-  form   
+  .container.banner.fluid(ng-if="testDone").mt2.mb2
+    .c10.o1 {{resultado.imc}} {{resultado.apnea}}
+    
+  
+  form(ng-hide="testDone") 
     wizard(on-finish="finishTest()")   
       wz-step(wz-title="IMC")
         .container
@@ -18,41 +21,39 @@
             rzslider(rz-slider-model="test.imc", rz-slider-options="test.optionsb" )
         .container.end.mt2
           .c.cm10: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
-      wz-step(wz-title="Ronquido")
+      
+      wz-step(wz-title="", canexit="val1")
         .container
-          .c4.cm12.question
-            h4 ¿Cuando duerme?
-            .container
-              .c: +radiobtn('Sí', 'test.ronca')
-              .c: +radiobtn('No', 'test.ronca')
-              .c: +radiobtn('No sabe', 'test.ronca')
-          .c4.cm12.question
-            h4 Su ronquido es:
-            .container
-              .c: +radiobtn('Sí', 'test.ronquidoes')
-              .c: +radiobtn('No', 'test.ronquidoes')
-              .c: +radiobtn('No sabe', 'test.ronquidoes')
-          .c4.cm12.question
-            h4 ¿Con qué frecuencia ronca?
-            .container
-              .c: +radiobtn('Sí', 'test.frecuencia')
-              .c: +radiobtn('No', 'test.frecuencia')
-              .c: +radiobtn('No sabe', 'test.frecuencia')
+          .c6.g.cm12.question: +question('¿Su peso ha variado?', 'test.pesoHaVariado', ['Sí, ha aumentado', 'Sí, ha disminuído', 'No ha variado'])
+          .c6.g.cm12.question: +question('¿Usted ronca?', 'test.ronca', ['Sí', 'No', 'No lo sé'])
         .container.end.mt2
           .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
-      wz-step(wz-title="Su ronquido")
+      
+      wz-step(wz-title="", canexit="val2")
         .container
-          .c4.o1.question
-            h4 ¿Su ronquido molesta a otras personas?
-            .container
-              .c: +radiobtn('Sí', 'test.molesta')
-              .c: +radiobtn('No', 'test.molesta')
-              .c: +radiobtn('No sabe', 'test.molesta')
-          .c4.o1.question
-            h4 ¿Alguien ha notado que deja de respirar mientras duerme?
-            .container
-              .c: +radiobtn('Sí', 'test.norespira')
-              .c: +radiobtn('No', 'test.norespira')
-              .c: +radiobtn('No sabe', 'test.norespira')
+          .c6.g.cm12.question: +question('¿Cuán intenso es el ronquido?', 'test.intensidadRonquido', ['Es tanto como la respiración', 'Tanto como el volumen al hablar', 'Mayor que el volumen al hablar', 'Es muy fuerte'])
+          .c6.g.cm12.question: +question('¿Con qué frecuencia ronca?', 'test.frecuenciaRonquido', ['Casi todos los dias', '3 a 4 veces por semana', '1 a 2 veces por semana', '1 a dos veces al mes', 'Nunca o casi nunca'])
         .container.end.mt2
           .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
+      
+      wz-step(wz-title="", canexit="val3")
+        .container
+          .c6.g.cm12.question: +question('¿Su ronquido molesta a otras personas?', 'test.molesta', ['Sí', 'No'])
+          .c6.g.cm12.question: +question('¿Con qué frecuencia le han mencionado que haga pausas en la respiración?', 'test.pausas', ['Casi todos los días', '3 a 4 veces por semana', '1 a 2 veces por semana', '1 a dos veces al mes', 'Nunca o casi nunca'])
+        .container.end.mt2
+          .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
+      
+      wz-step(wz-title="", canexit="val4")
+        .container
+          .c6.g.cm12.question: +question('¿Se siente cansado al levantarse por la mañana?', 'test.cansadoAlLevantarse', ['Casi todos los días', '3 a 4 veces por semana', '1 a 2 veces por semana', '1 a dos veces al mes', 'Nunca o casi nunca'])
+          .c6.g.cm12.question: +question('¿Se siente cansado durante el día?', 'test.cansadoDuranteElDia', ['Casi todos los días', '3 a 4 veces por semana', '1 a 2 veces por semana', '1 a dos veces al mes', 'Nunca o casi nunca'])
+        .container.end.mt2
+          .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
+      
+      wz-step(wz-title="", canexit="val5")
+        .container
+          .c6.g.cm12.question: +question('¿Alguna vez se ha quedado dormido o cebeceado mientras manejaba?', 'test.cabeceado', ['Sí', 'No'])
+          .c6.g.cm12.question: +question('Tiene usted presión alta?', 'test.presionAlta', ['Sí', 'No'])
+        .container.end.mt2
+          .c4: input(type="submit", wz-next, value="Terminar").button.button-primary.button-pill
+          

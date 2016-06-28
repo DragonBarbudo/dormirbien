@@ -2259,7 +2259,10 @@ header .menu nav a:hover:after {
 #consejos .slick-arrow:before {
   color: #26d8ff;
 }
-#test form label.simple {
+#test {
+  background-image: url(../img/bannerD.jpg);
+}
+#testForm form label.simple {
   display: block;
   color: #888;
   font-size: 0.9em;
@@ -2267,7 +2270,7 @@ header .menu nav a:hover:after {
   margin-bottom: 5px;
   border-bottom: 1px solid #4CB19F;
 }
-#test .end {
+#testForm .end {
   text-align: right;
 }
 .rzslider .rz-pointer {
@@ -2278,6 +2281,9 @@ header .menu nav a:hover:after {
 }
 .rzslider .rz-pointer.rz-active:after {
   background-color: #f5f5f5;
+}
+.inputradio {
+  margin-top: 10px;
 }
 .inputradio input[type="radio"] {
   visibility: hidden;
@@ -2315,11 +2321,14 @@ header .menu nav a:hover:after {
   width: 200px;
   text-align: center;
 }
-#contacto h3 {
+#contacto {
+  background-image: url(../img/bannerH.jpg);
+}
+#contactoInfo h3 {
   color: #4CB19F;
   margin-bottom: 10px;
 }
-#contacto h4 {
+#contactoInfo h4 {
   color: #888;
   margin-bottom: 5px;
 }

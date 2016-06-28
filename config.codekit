@@ -141,6 +141,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/app\/img\/bannerD.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 156157,
+		"inputAbbreviatedPath": "\/app\/img\/bannerD.jpg",
+		"outputAbbreviatedPath": "\/app\/img\/bannerD.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/img\/bannerH.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 121806,
+		"inputAbbreviatedPath": "\/app\/img\/bannerH.jpg",
+		"outputAbbreviatedPath": "\/app\/img\/bannerH.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/app\/img\/bed1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

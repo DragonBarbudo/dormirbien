@@ -29,8 +29,18 @@ include ../dw3/_dw3.jade
 
 
 
-mixin radiobtn(label, model, name)
+mixin radiobtn(label, model, index)
   - var rnm = Math.floor((Math.random() * 1000) + 1)
+  - var name = model.replace('.','')
   .inputradio
-    input(type="radio", id="name_#{rnm}", name="#{model}", ng-model="#{model}", value="#{label}")
-    label(for="name_#{rnm}").button.button-pill.button-small #{label}
+    input(type="radio", id="#{name}_#{rnm}", name="#{model}", ng-model="#{model}", value="#{index+1}")
+    label(for="#{name}_#{rnm}").button.button-pill.button-small #{label}
+
+mixin question(pregunta, model, answers)
+  h4=pregunta
+  .container
+    each an, index in answers
+      .c12: +radiobtn(an, model, index)
+      
+  
+  

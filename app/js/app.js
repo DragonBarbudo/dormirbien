@@ -80,9 +80,30 @@ app.controller('TestCtrl', function($scope){
   };
 
   $scope.test.imc = $scope.test.peso / (($scope.test.altura/100) * ($scope.test.altura/100))
+  $scope.testDone = false;
+  $scope.resultado = {
+    imc: "",
+    apnea : ""
+  };
+
+
+  //Validations
+  $scope.val1 = function(){ if($scope.test.pesoHaVariado && $scope.test.ronca){ return true; } }
+  $scope.val2 = function(){ if($scope.test.intensidadRonquido && $scope.test.frecuenciaRonquido){ return true; } }
+  $scope.val3 = function(){ if($scope.test.molesta && $scope.test.pausas){ return true; } }
+  $scope.val4 = function(){ if($scope.test.cansadoAlLevantarse && $scope.test.cansadoDuranteElDia){ return true; } }
+  $scope.val5 = function(){ if($scope.test.cabeceado && $scope.test.presionAlta){ return true; } }
+
+
 
   $scope.finishTest = function(){
-    alert('end');
+    var puntuacion = $scope.test.pesoHaVariado + $scope.test.ronca + $scope.test.intensidadRonquido + $scope.test.frecuenciaRonquido + $scope.test.molesta + $scope.test.pausas + $scope.test.cansadoAlLevantarse + $scope.test.cansadoDuranteElDia + $scope.test.cabeceado + $scope.test.presionAlta;
+    $scope.testDone = true;
+
+    if($scope.resultado.imc < 19){ $scope.resultado.imc = 'Se encuentra por debajo de su peso ideal, le recomendamos que visíte un especialista que pueda revisar su situación.'; }
+    if($scope.resultado.imc >= 19 && $scope.test.imc <= 25){ $scope.resultado.imc = 'Su peso se encuentra en un estado óptimo.'; }
+    if($scope.resultado.imc > 25){ $scope.resultado.imc = 'Padece sobrepeso, le recomendamos que visíte un especialista que pueda revisar su situación.'; }
+    $scope.resultado.apnea =  "...";
   }
 
 });

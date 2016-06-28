@@ -33,13 +33,14 @@ include app/_config.jade
     section#consejos.container.fluid.mt
       include _consejos
     
-    section#test.container.mt2.mb2(ng-controller="TestCtrl")
+    section#test.bannerFix.container.fluid
+      .c: h2 Test del sueño
+    section#testForm.container.mt2.mb2(ng-controller="TestCtrl")
       include _test
   
-    section#contacto.container.mt2.mb
-      .c12.cm10.om1
-        h2 Contacto
-        br
+    section#contacto.bannerFix.container.fluid
+      .c: h2 Contacto
+    section#contactoInfo.container.mb.mt
       .c6.cm12.g
         ui-gmap-google-map(center="{latitude:21.144671, longitude:-86.822484}" zoom="17")
           ui-gmap-marker(coords="{latitude:21.144671, longitude:-86.822484}", idkey="1", options="{labelContent:'Hospital Amerimed Cancún', labelClass:'markerLabel', labelAnchor:'100 100' }")
