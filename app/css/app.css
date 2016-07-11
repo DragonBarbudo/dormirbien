@@ -2187,19 +2187,21 @@ header .menu nav a:hover:after {
 #nosotros {
   text-align: justify;
 }
-#nosotros p strong {
-  font-weight: lighter;
-}
-#nosotros p strong i {
+#nosotros p i {
   color: #1B9AF7;
   margin-right: 5px;
+  display: block;
 }
-#nosotros p strong small {
-  font-size: 1em;
+#nosotros p strong {
+  color: #1B9AF7;
+  display: block;
 }
 #nosotros a {
   color: #4CB19F;
   text-decoration: underline;
+}
+#nosotros ul {
+  font-size: 0.8em;
 }
 #nosotros .dra {
   width: 280px;
