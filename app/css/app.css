@@ -2187,6 +2187,55 @@ header .menu nav a:hover:after {
 #nosotros {
   text-align: justify;
 }
+#nosotros p strong {
+  font-weight: lighter;
+}
+#nosotros p strong i {
+  color: #1B9AF7;
+  margin-right: 5px;
+}
+#nosotros p strong small {
+  font-size: 1em;
+}
+#nosotros a {
+  color: #4CB19F;
+  text-decoration: underline;
+}
+#nosotros .dra {
+  width: 280px;
+  height: 280px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxQjlBRjciIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE3ODBjZSIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
+  background-image: -webkit-linear-gradient(left, #1B9AF7, #1780ce);
+  background-image: -moz-linear-gradient(left, #1B9AF7, #1780ce);
+  background-image: -o-linear-gradient(left, #1B9AF7, #1780ce);
+  background-image: linear-gradient(to right, #1B9AF7, #1780ce);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 4px;
+  overflow: hidden;
+  -webkit-border-radius: 50%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50%;
+  -moz-background-clip: padding;
+  border-radius: 50%;
+  background-clip: padding-box;
+  margin: 60px auto 10px auto;
+}
+@media only screen and (min-width: 721px) and (max-width: 1023px), only screen and (max-width: 720px) {
+  #nosotros .dra {
+    margin: 0px auto 10px auto;
+  }
+}
+#nosotros .dra img {
+  width: 100%;
+  -webkit-border-radius: 50%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50%;
+  -moz-background-clip: padding;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
 .serviciosList {
   margin-top: 20px;
 }
@@ -2382,7 +2431,7 @@ header .menu nav a:hover:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 4px;
   overflow: hidden;
   -webkit-border-radius: 50%;
   -webkit-background-clip: padding-box;

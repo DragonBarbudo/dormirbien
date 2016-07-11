@@ -45,6 +45,7 @@ app.controller('TestCtrl', function($scope){
     peso : 60,
     altura: 165,
     imc: 0,
+    edad: 50,
     options:{
       floor: 0,
       ceil: 280,
@@ -76,6 +77,11 @@ app.controller('TestCtrl', function($scope){
         if(val>35 && val<=40){return '#E0562F'; }
         if(val>40){return '#D0021B'; }
       }
+    },
+    optionsAge:{
+      floor: 0,
+      ceil: 120,
+      step: 1
     }
   };
 
@@ -88,22 +94,29 @@ app.controller('TestCtrl', function($scope){
 
 
   //Validations
-  $scope.val1 = function(){ if($scope.test.pesoHaVariado && $scope.test.ronca){ return true; } }
-  $scope.val2 = function(){ if($scope.test.intensidadRonquido && $scope.test.frecuenciaRonquido){ return true; } }
-  $scope.val3 = function(){ if($scope.test.molesta && $scope.test.pausas){ return true; } }
-  $scope.val4 = function(){ if($scope.test.cansadoAlLevantarse && $scope.test.cansadoDuranteElDia){ return true; } }
-  $scope.val5 = function(){ if($scope.test.cabeceado && $scope.test.presionAlta){ return true; } }
+  $scope.val1 = function(){ if($scope.test.v1 && $scope.test.v2){ return true; } }
+  $scope.val2 = function(){ if($scope.test.v3 && $scope.test.v4){ return true; } }
+  $scope.val3 = function(){ if($scope.test.v5 && $scope.test.v6){ return true; } }
+
 
 
 
   $scope.finishTest = function(){
-    var puntuacion = $scope.test.pesoHaVariado + $scope.test.ronca + $scope.test.intensidadRonquido + $scope.test.frecuenciaRonquido + $scope.test.molesta + $scope.test.pausas + $scope.test.cansadoAlLevantarse + $scope.test.cansadoDuranteElDia + $scope.test.cabeceado + $scope.test.presionAlta;
+    var puntuacion = $scope.test.v1 + $scope.test.v2 + $scope.test.v3 + $scope.test.v4 + $scope.test.v5 + $scope.test.v6;
+    if($scope.resultado.imc>35){ puntuacion +=1; }
+    if($scope.resultado.edad>50){ puntuacion +=1; }
+
     $scope.testDone = true;
 
     if($scope.resultado.imc < 19){ $scope.resultado.imc = 'Se encuentra por debajo de su peso ideal, le recomendamos que visíte un especialista que pueda revisar su situación.'; }
     if($scope.resultado.imc >= 19 && $scope.test.imc <= 25){ $scope.resultado.imc = 'Su peso se encuentra en un estado óptimo.'; }
     if($scope.resultado.imc > 25){ $scope.resultado.imc = 'Padece sobrepeso, le recomendamos que visíte un especialista que pueda revisar su situación.'; }
-    $scope.resultado.apnea =  "...";
+    if(puntuacion>3){
+      $scope.resultado.apnea =  "Usted tiene un alto riesgo de padecer un transtorno respiratorio del sueño. Consulte a su especialista.";
+    } else {
+      $scope.resultado.apnea =  "No tiene un alto riesgo de padecer un transtorno respiratorio del sueño.";
+    }
+
   }
 
 });

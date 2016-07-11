@@ -3,7 +3,10 @@
   h3 ¿Padezco algún transtorno respiratorio del sueño?
   
   .container.banner.fluid(ng-if="testDone").mt2.mb2
-    .c10.o1 {{resultado.imc}} {{resultado.apnea}}
+    .c10.o1 
+      | {{resultado.imc}}
+      br
+      | {{resultado.apnea}}
     
   
   form(ng-hide="testDone") 
@@ -22,38 +25,33 @@
         .container.end.mt2
           .c.cm10: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
       
+      wz-step(wz-title="Edad")
+        .container
+          .c6.o3.g.cm12
+            label.simple ¿Cuál es su edad?
+            rzslider(rz-slider-model="test.edad", rz-slider-options="test.optionsAge" )
+        .container.end.mt2
+          .c.cm10: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
+      
       wz-step(wz-title="", canexit="val1")
         .container
-          .c6.g.cm12.question: +question('¿Su peso ha variado?', 'test.pesoHaVariado', ['Sí, ha aumentado', 'Sí, ha disminuído', 'No ha variado'])
-          .c6.g.cm12.question: +question('¿Usted ronca?', 'test.ronca', ['Sí', 'No', 'No lo sé'])
+          .c6.g.cm12.question: +question('¿Ronca fuertemente? (tan alto que se pued escuchar a través de puertas cerradas)', 'test.v1', ['No', 'Sí'])
+          .c6.g.cm12.question: +question('¿A menudo se siente cansado, fatigado o con sueño durante el día?', 'test.v2', ['No', 'Sí'])
         .container.end.mt2
           .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
       
       wz-step(wz-title="", canexit="val2")
         .container
-          .c6.g.cm12.question: +question('¿Cuán intenso es el ronquido?', 'test.intensidadRonquido', ['Es tanto como la respiración', 'Tanto como el volumen al hablar', 'Mayor que el volumen al hablar', 'Es muy fuerte'])
-          .c6.g.cm12.question: +question('¿Con qué frecuencia ronca?', 'test.frecuenciaRonquido', ['Casi todos los dias', '3 a 4 veces por semana', '1 a 2 veces por semana', '1 a dos veces al mes', 'Nunca o casi nunca'])
+          .c6.g.cm12.question: +question('¿Ha observado alguien si usted deja de respirar durante el sueño?', 'test.v3', ['No', 'Sí'])
+          .c6.g.cm12.question: +question('¿Está o ha estado recibiendo tratamiento para la presión arterial alta?', 'test.v4', ['No', 'Sí'])
         .container.end.mt2
           .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
       
       wz-step(wz-title="", canexit="val3")
         .container
-          .c6.g.cm12.question: +question('¿Su ronquido molesta a otras personas?', 'test.molesta', ['Sí', 'No'])
-          .c6.g.cm12.question: +question('¿Con qué frecuencia le han mencionado que haga pausas en la respiración?', 'test.pausas', ['Casi todos los días', '3 a 4 veces por semana', '1 a 2 veces por semana', '1 a dos veces al mes', 'Nunca o casi nunca'])
-        .container.end.mt2
-          .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
-      
-      wz-step(wz-title="", canexit="val4")
-        .container
-          .c6.g.cm12.question: +question('¿Se siente cansado al levantarse por la mañana?', 'test.cansadoAlLevantarse', ['Casi todos los días', '3 a 4 veces por semana', '1 a 2 veces por semana', '1 a dos veces al mes', 'Nunca o casi nunca'])
-          .c6.g.cm12.question: +question('¿Se siente cansado durante el día?', 'test.cansadoDuranteElDia', ['Casi todos los días', '3 a 4 veces por semana', '1 a 2 veces por semana', '1 a dos veces al mes', 'Nunca o casi nunca'])
-        .container.end.mt2
-          .c4: input(type="submit", wz-next, value="Continuar").button.button-primary.button-pill
-      
-      wz-step(wz-title="", canexit="val5")
-        .container
-          .c6.g.cm12.question: +question('¿Alguna vez se ha quedado dormido o cebeceado mientras manejaba?', 'test.cabeceado', ['Sí', 'No'])
-          .c6.g.cm12.question: +question('Tiene usted presión alta?', 'test.presionAlta', ['Sí', 'No'])
+          .c6.g.cm12.question: +question('La circunferencia de su cuello es mayor a 40 cms?', 'test.v5', ['No', 'Sí'])
+          .c6.g.cm12.question: +question('Su género es:', 'test.v6', ['Femenino', 'Masculino'])
         .container.end.mt2
           .c4: input(type="submit", wz-next, value="Terminar").button.button-primary.button-pill
-          
+      
+    
