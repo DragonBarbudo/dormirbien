@@ -29,7 +29,12 @@
     a(href="#test", du-smooth-scroll).button.button-pill.button-small.button-primary Autoevaluación de sueño
 
 .container.mt2.mb2.moreinfo
-  .c.cm10.om1: slick(slides-to-show="1")
+  .c.cm10.om1: slick(as-nav-for=".slickTranstornos", slides-to-show="4", focus-on-select="true", draggable="false").slickTranstornosNav
+    div Narcolepsia
+    div Ronquido y apnea
+    div Insomnio
+    div Parasomnias
+  .c.cm10.om1: slick(slides-to-show="1", as-nav-for=".slickTranstornosNav").slickTranstornos
     div
       h3 Narcolepsia
       .container
